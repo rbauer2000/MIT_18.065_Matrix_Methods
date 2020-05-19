@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589253187038.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3067003623",
+    "id" : "C32EF835",
+    "lastKnownWriteTime" : 1589253215,
+    "last_content_update" : 1589253251971,
+    "path" : "~/WorkSpace/MIT_math_18-065/Lecture_01.Rmd",
+    "project_path" : "Lecture_01.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "29,0",
+        "marks" : "<:8,-1\n>:8,0\na:28,21",
+        "scrollLine" : "16",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

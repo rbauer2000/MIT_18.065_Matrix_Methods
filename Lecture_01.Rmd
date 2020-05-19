@@ -1,0 +1,36 @@
+---
+title: "MIT math 18-065"
+output:
+  html_document:
+    df_print: paged
+---
+
+#Lecture 1
+
+Just want to see how to put in python chuck and if assigning value puts into R Global Environment.
+
+```{python}
+import math
+a = 2 * math.pi
+a
+```
+
+I didn't put anything in Rcpp because I don't remember how to do main and all that
+
+```{Rcpp}
+```
+
+Just for fun, put in bash ls.
+
+```{bash}
+ls
+```
+
+OK, we enter a 3 x 3 matrix and then to select random vector from column space we create random vector x and then Ax.
+
+```{r}
+A <- matrix(data = c(2, 3, 5, 1, 1, 7, 3, 4, 12), nrow = 3)
+x <- sample.int(10, size = 3, replace = TRUE)
+A %*% x
+```
+
