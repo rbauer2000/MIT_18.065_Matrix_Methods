@@ -1,0 +1,298 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ math}
+
+\NormalTok{np.random.seed(seed}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{A }\OperatorTok{=}\NormalTok{ np.random.randint(}\DecValTok{10}\NormalTok{, size }\OperatorTok{=}\NormalTok{ (}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(A)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[5 0 3]
+##  [3 7 9]
+##  [3 5 2]
+##  [4 7 6]
+##  [8 8 1]]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([[5, 0, 3],
+##        [3, 7, 9],
+##        [3, 5, 2],
+##        [4, 7, 6],
+##        [8, 8, 1]])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{np.linalg.eig(A.dot(A.transpose())) }\CommentTok{# I think this works}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (array([ 3.74765993e+02,  4.79827176e+01,  1.82512898e+01, -4.48728322e-15,
+##         1.62799148e-14]), array([[ 0.21225332,  0.09958505, -0.95484953,  0.16771422,  0.12272347],
+##        [ 0.56724169, -0.6194619 ,  0.00926204, -0.06655454, -0.5306983 ],
+##        [ 0.31008733,  0.13326169,  0.24689917,  0.9059928 ,  0.3580154 ],
+##        [ 0.51393848, -0.19265757,  0.11251445, -0.23573212,  0.67345991],
+##        [ 0.52239686,  0.74261306,  0.12065608, -0.30174467, -0.34867604]]))
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Λ1, U1 }\OperatorTok{=}\NormalTok{ np.linalg.eig(A }\OperatorTok{@}\NormalTok{ A.transpose()) }\CommentTok{# this works like above but I like notation better}
+
+\NormalTok{Λ1, U1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (array([ 3.74765993e+02,  4.79827176e+01,  1.82512898e+01, -4.48728322e-15,
+##         1.62799148e-14]), array([[ 0.21225332,  0.09958505, -0.95484953,  0.16771422,  0.12272347],
+##        [ 0.56724169, -0.6194619 ,  0.00926204, -0.06655454, -0.5306983 ],
+##        [ 0.31008733,  0.13326169,  0.24689917,  0.9059928 ,  0.3580154 ],
+##        [ 0.51393848, -0.19265757,  0.11251445, -0.23573212,  0.67345991],
+##        [ 0.52239686,  0.74261306,  0.12065608, -0.30174467, -0.34867604]]))
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Λ2, U2 }\OperatorTok{=}\NormalTok{ np.linalg.eig(A.transpose() }\OperatorTok{@}\NormalTok{ A)}
+
+\NormalTok{Λ2, U2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (array([374.76599263,  18.25128978,  47.98271759]), array([[-0.51284918, -0.60635883, -0.60771267],
+##        [-0.68691355,  0.71443602, -0.13315757],
+##        [-0.51491309, -0.34915631,  0.78291403]]))
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{U, S, Vh }\OperatorTok{=}\NormalTok{ np.linalg.svd(A)}
+
+\NormalTok{U}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([[-0.21225332, -0.09958505,  0.95484953,  0.01530755, -0.18182245],
+##        [-0.56724169,  0.6194619 , -0.00926204, -0.49002922,  0.23300087],
+##        [-0.31008733, -0.13326169, -0.24689917, -0.22348396, -0.88044471],
+##        [-0.51393848,  0.19265757, -0.11251445,  0.82787418, -0.0267421 ],
+##        [-0.52239686, -0.74261306, -0.12065608, -0.15593687,  0.36980152]])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{S}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([19.35887374,  6.92695587,  4.27215283])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Vh}
+
+\CommentTok{# The Λs and 𝑆𝑇∗𝑆 all the same - eigenvalues}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([[-0.51284918, -0.68691355, -0.51491309],
+##        [-0.60771267, -0.13315757,  0.78291403],
+##        [ 0.60635883, -0.71443602,  0.34915631]])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Λ1[}\DecValTok{0}\NormalTok{:}\DecValTok{3}\NormalTok{] }\OperatorTok{-}\NormalTok{ Λ2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([-1.70530257e-13,  2.97314278e+01, -2.97314278e+01])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Λ2 }\OperatorTok{-}\NormalTok{ S.dot(S)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([ -66.23400737, -422.74871022, -393.01728241])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{U1 }\OperatorTok{-}\NormalTok{ U }\CommentTok{# expecting near zero, but not all???}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([[ 0.42450663,  0.1991701 , -1.90969906,  0.15240667,  0.30454592],
+##        [ 1.13448338, -1.2389238 ,  0.01852407,  0.42347468, -0.76369917],
+##        [ 0.62017466,  0.26652337,  0.49379834,  1.12947676,  1.23846012],
+##        [ 1.02787696, -0.38531514,  0.22502891, -1.06360631,  0.70020201],
+##        [ 1.04479373,  1.48522612,  0.24131215, -0.1458078 , -0.71847756]])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{U2 }\OperatorTok{-}\NormalTok{ Vh.transpose()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([[-5.55111512e-16,  1.35383227e-03, -1.21407150e+00],
+##        [ 2.22044605e-16,  8.47593598e-01,  5.81278449e-01],
+##        [-1.11022302e-16, -1.13207034e+00,  4.33757713e-01]])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{U1, U, U2, Vh}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (array([[ 0.21225332,  0.09958505, -0.95484953,  0.16771422,  0.12272347],
+##        [ 0.56724169, -0.6194619 ,  0.00926204, -0.06655454, -0.5306983 ],
+##        [ 0.31008733,  0.13326169,  0.24689917,  0.9059928 ,  0.3580154 ],
+##        [ 0.51393848, -0.19265757,  0.11251445, -0.23573212,  0.67345991],
+##        [ 0.52239686,  0.74261306,  0.12065608, -0.30174467, -0.34867604]]), array([[-0.21225332, -0.09958505,  0.95484953,  0.01530755, -0.18182245],
+##        [-0.56724169,  0.6194619 , -0.00926204, -0.49002922,  0.23300087],
+##        [-0.31008733, -0.13326169, -0.24689917, -0.22348396, -0.88044471],
+##        [-0.51393848,  0.19265757, -0.11251445,  0.82787418, -0.0267421 ],
+##        [-0.52239686, -0.74261306, -0.12065608, -0.15593687,  0.36980152]]), array([[-0.51284918, -0.60635883, -0.60771267],
+##        [-0.68691355,  0.71443602, -0.13315757],
+##        [-0.51491309, -0.34915631,  0.78291403]]), array([[-0.51284918, -0.68691355, -0.51491309],
+##        [-0.60771267, -0.13315757,  0.78291403],
+##        [ 0.60635883, -0.71443602,  0.34915631]]))
+\end{verbatim}
+
+\end{document}
