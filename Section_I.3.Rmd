@@ -1,0 +1,36 @@
+---
+title: "Section I.3 The Four Fundamental Subspaces"
+output: html_notebook
+---
+I did this section in python jupyter notebook, but there are some things that I don't like about python even though I do like scipy packages a little more than just numpy.  But here I am again looking at using R.
+
+The basic data type in R is a vector and there is a matrix also.  So let's see if it is easy to find null space, column space, row space and left null space or null space of $A^T$
+
+```{r}
+library(pracma)
+```
+
+
+```{r}
+B <- matrix(c(1, 3, -2, -6, -2, -6), nrow = 2, ncol = 3)
+B
+```
+```{r}
+ns <- null(B)
+ns
+cs <- orth(B)
+cs
+lns <- null(B)
+lns
+rw <- orth(B)
+rw
+```
+By inspection we can see that Null Space
+solutions to $Bx=0$ are 
+$x_1 = \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}$
+$x_2 = \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix}$
+But these are not prefect vectors to choose since not orthonormal.  These do form bases for null space but are not orthnormal
+
+```{r}
+
+```
